@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_item_color1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/wallet"
+            android:paddingStart="32dp"
+            android:id="@+id/walletBtn"
+            android:text="@string/wallet_title"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="32sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_item_color2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/calculator"
+            android:paddingStart="32dp"
+            android:id="@+id/calculatorBtn"
+            android:text="@string/coinCalculatorTitle"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="32sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_item_color3">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/bar_chart"
+            android:paddingStart="32dp"
+            android:id="@+id/portfolioBtn"
+            android:text="@string/coinCalculatorTitle"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="32sp"/>
+    </LinearLayout>
+</LinearLayout>
