@@ -1,23 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="4dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <Spinner
+            android:id="@+id/coinListWallet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/coinListWallet">
+            android:entries="@array/coin_list">
 
         </Spinner>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/buy_mount"
+            android:gravity="center"></TextView>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:gravity="center">
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/no_select_coin"
+                android:gravity="center"
+                android:hint="@string/coin_mount"
+                android:inputType="number" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/buy_value"
+            android:gravity="center"></TextView>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:gravity="center">
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/no_select_money"
+                android:gravity="center"
+                android:hint="@string/coin_value"
+                android:inputType="number" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_item_color1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="매수총액"
+            android:textStyle="bold"
+            android:textColor="@color/white_color"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="end"
+            android:text=""/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="원"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/blue_color">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="등록하기"
+                android:textColor="@color/white_color"
+                android:textSize="18dp"
+                android:backgroundTint="@color/primary_item_color3"
+                tools:targetApi="lollipop" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

@@ -47,7 +47,7 @@
             android:drawableStart="@drawable/bar_chart"
             android:paddingStart="32dp"
             android:id="@+id/portfolioBtn"
-            android:text="@string/coinCalculatorTitle"
+            android:text="@string/coin_graph"
             android:gravity="center"
             android:textColor="@color/white_color"
             android:textSize="32sp"/>

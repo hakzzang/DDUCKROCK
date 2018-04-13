@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="coin_list">
+        private var currencys = listOf("BTC", "ETH", "DASH", "LTC", "ETC", "XRP", "BCH", "XMR", "ZEC", "QTUM", "BTG", "EOS", "ICX", "VEN", "TRX")
+        <item>BTC</item>
+        <item>ETH</item>
+        <item>DASH</item>
+        <item>LTC</item>
+        <item>ETC</item>
+        <item>XRP</item>
+        <item>BCH</item>
+        <item>XMR</item>
+        <item>ZEC</item>
+        <item>QTUM</item>
+        <item>BTG</item>
+        <item>EOS</item>
+        <item>ICX</item>
+        <item>VEN</item>
+        <item>TRX</item>
+
+    </string-array>
+</resources>
