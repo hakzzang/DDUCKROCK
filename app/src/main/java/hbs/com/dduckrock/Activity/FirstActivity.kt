@@ -1,10 +1,12 @@
-package hbs.com.dduckrock
+package hbs.com.dduckrock.Activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import hbs.com.dduckrock.MainActivity
+import hbs.com.dduckrock.R
 import kotlinx.android.synthetic.main.activity_first.*
 
 @SuppressLint("Registered")
@@ -28,13 +30,13 @@ class FirstActivity:AppCompatActivity(){
             onClick(it)
         }
     }
+
     fun onClick(view:View)
     {
         when(view.id){
-            R.id.walletBtn-> startActivity(Intent(this,MainActivity::class.java))
-            R.id.calculatorBtn-> startActivity(Intent(this,MainActivity::class.java))
-            R.id.portfolioBtn-> startActivity(Intent(this,MainActivity::class.java))
+            R.id.walletBtn -> startActivity(Intent(this, WalletActivity::class.java))
+            R.id.calculatorBtn -> startActivity(Intent(this, MainActivity::class.java))
+            R.id.portfolioBtn -> startActivity(Intent(this, MainActivity::class.java))
         }
-
     }
 }

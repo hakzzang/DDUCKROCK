@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         connectBtn.setOnClickListener {
             view ->
             Log.d("preUrl",url)
-            connectBithumb!!.resultTV= resultTV
             connectBithumb!!.execute(url)
         }
 

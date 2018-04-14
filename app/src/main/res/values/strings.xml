@@ -22,11 +22,15 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
-    <string name="wallet_title">지갑 관리</string>
+    <string name="wallet_title">구매한 코인 등록</string>
     <string name="coinCalculatorTitle">코인 계산</string>
     <string name="coin_value">코인 가격</string>
-    <string name="buy_value">매수가격</string>
+    <string name="buy_value">구입한\n가격</string>
+    <string name="buy_mount">구입한\n수량</string>
     <string name="coin_mount">코인 보유량</string>
-    <string name="buy_mount">매수수량</string>
     <string name="coin_graph">코인 그래프</string>
+    <string name="cost_type">원</string>
+    <string name="EA_String">EA</string>
+    <string name="total_cost_text">계산한\n총액</string>
+    <string name="submit_text">등록하기</string>
 </resources>
