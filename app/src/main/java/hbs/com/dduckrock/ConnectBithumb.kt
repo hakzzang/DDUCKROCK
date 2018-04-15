@@ -80,6 +80,4 @@ class ConnectBithumb : AsyncTask<String, String, String>(){
     override fun onPreExecute() {
         super.onPreExecute()
     }
-
-
 }

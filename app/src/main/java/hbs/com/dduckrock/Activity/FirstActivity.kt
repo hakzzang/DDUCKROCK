@@ -19,7 +19,10 @@ class FirstActivity:AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
 
-        walletBtn.setOnClickListener {
+        buyWalletBtn.setOnClickListener {
+            onClick(it)
+        }
+        sellWalletBtn.setOnClickListener {
             onClick(it)
         }
         calculatorBtn.setOnClickListener {
@@ -34,7 +37,8 @@ class FirstActivity:AppCompatActivity(){
     fun onClick(view:View)
     {
         when(view.id){
-            R.id.walletBtn -> startActivity(Intent(this, WalletActivity::class.java))
+            R.id.buyWalletBtn -> startActivity(Intent(this, WalletActivity::class.java))
+            R.id.sellWalletBtn-> startActivity(Intent(this, SellWalletActivity ::class.java))
             R.id.calculatorBtn -> startActivity(Intent(this, MainActivity::class.java))
             R.id.portfolioBtn -> startActivity(Intent(this, MainActivity::class.java))
         }

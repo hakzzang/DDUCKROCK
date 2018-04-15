@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:drawableStart="@drawable/wallet"
             android:paddingStart="32dp"
-            android:id="@+id/walletBtn"
+            android:id="@+id/buyWalletBtn"
             android:text="@string/wallet_title"
             android:gravity="center"
             android:textColor="@color/white_color"
@@ -25,6 +25,22 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/primary_item_color2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/wallet"
+            android:paddingStart="32dp"
+            android:id="@+id/sellWalletBtn"
+            android:text="@string/sell_wallet_title"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="32sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_item_color3">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/primary_item_color3">
+        android:background="@color/primary_item_color4">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

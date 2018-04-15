@@ -83,7 +83,7 @@ class CoinListAdapter : BaseAdapter {
         return convertView!!
     }
 
-    override fun getItem(position: Int): Any = myCoinArray.get(position)
+    override fun getItem(position: Int): Any = myCoinArray.get(position).coinName
 
     override fun getItemId(position: Int): Long = position.toLong()
 

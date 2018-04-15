@@ -24,20 +24,20 @@ import java.text.DecimalFormat
 /**
  * Created by ooongi on 2018-04-13.
  */
-class WalletActivity : AppCompatActivity(), TextWatcher {
+
+class SellWalletActivity: AppCompatActivity(), TextWatcher {
     private var currencys: ArrayList<String> = arrayListOf<String>("BTC", "ETH", "DASH", "LTC", "ETC", "XRP", "BCH", "XMR", "ZEC", "QTUM", "BTG", "EOS", "ICX", "VEN", "TRX")
     private var selectCoinArray: ArrayList<CoinModel> = arrayListOf<CoinModel>()
     private var myCoinArrays: ArrayList<CoinModel> = arrayListOf()
     private var bithumb_url = "https://api.bithumb.com/public/orderbook/"
     private var addWalletDBAs: AddWalletDBAs? = null
-    private var itemPosition = 0
+    private var itemPosition:Int = 0
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_wallet)
-        if(myCoinArrays!=null)
-            myCoinArrays.clear()
+        setContentView(R.layout.activity_sell_wallet)
+
         addWalletDBAs = AddWalletDBAs(this)
 
         selectMyCoinWallert()
@@ -56,6 +56,7 @@ class WalletActivity : AppCompatActivity(), TextWatcher {
         }
         coin_costET.addTextChangedListener(this)
         coinMountET.addTextChangedListener(coinMountTW)
+
         val layoutInflater: LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         val coinSpinnerAdapter: CoinListAdapter = CoinListAdapter(this, myCoinArrays, layoutInflater)
@@ -70,7 +71,11 @@ class WalletActivity : AppCompatActivity(), TextWatcher {
 
         override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
             val connectBithumb = ConnectBithumb()
-
+            if(myCoinArrays[position]==null){
+                coinMountET.setText("0")
+            }else{
+                coinMountET.setText(myCoinArrays[position].coinMount.toString())
+            }
 
             connectBithumb.resultET = coin_costET
             connectBithumb.execute(bithumb_url + myCoinArrays[position].coinName)
@@ -84,6 +89,27 @@ class WalletActivity : AppCompatActivity(), TextWatcher {
             view.setImageDrawable(getDrawable(select_imageMipmap))
         } else {
             view.setImageDrawable(getDrawable(no_select_imageMipmap))
+        }
+    }
+
+    private val coinMountTW = object : TextWatcher {
+        override fun afterTextChanged(p0: Editable?) {
+
+        }
+
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            val coinMount_double:Double = p0.toString().toDouble()
+            if(coinMount_double>myCoinArrays[itemPosition].coinMount.toDouble()){
+                Toast.makeText(this@SellWalletActivity,getString(R.string.over_sell_coin),Toast.LENGTH_SHORT).show()
+                coinMountET.setText(myCoinArrays[itemPosition].coinMount.toString())
+            }else if(myCoinArrays[itemPosition].coinMount.toDouble()<0){
+                Toast.makeText(this@SellWalletActivity,getString(R.string.down_sell_coin),Toast.LENGTH_SHORT).show()
+                coinMountET.setText("0")
+            }
         }
     }
 
@@ -134,7 +160,6 @@ class WalletActivity : AppCompatActivity(), TextWatcher {
                         myCoinArrays.add(selectCoin)
                     }
                 } else {
-                    myCoinArrays.add(CoinModel(coinName, 0.0))
                     continue
                 }
             }
@@ -142,7 +167,7 @@ class WalletActivity : AppCompatActivity(), TextWatcher {
     }
 
     private fun addCoinWallet(coinName: String, coinMount: String) {
-        if (addWalletDBAs == null) {
+       if (addWalletDBAs == null) {
             addWalletDBAs = AddWalletDBAs(this)
         }
 
@@ -153,26 +178,8 @@ class WalletActivity : AppCompatActivity(), TextWatcher {
         } else {
             coinCursor.moveToFirst()
             val alreadyHaveCoin = coinCursor.getString(1)
-            val totalCoin = Integer.valueOf(alreadyHaveCoin)+Integer.valueOf(coinMount)
+            val totalCoin = Integer.valueOf(alreadyHaveCoin)-Integer.valueOf(coinMount)
             addWalletDBAs!!.updateCoin(coinName, totalCoin.toString())
-        }
-    }
-
-    private val coinMountTW = object : TextWatcher {
-        override fun afterTextChanged(p0: Editable?) {
-
-        }
-
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-        }
-
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            val coinMount_double:Double = p0.toString().toDouble()
-            if(myCoinArrays[itemPosition].coinMount.toDouble()<0){
-                Toast.makeText(this@WalletActivity,getString(R.string.down_sell_coin),Toast.LENGTH_SHORT).show()
-                coinMountET.setText("0")
-            }
         }
     }
 }

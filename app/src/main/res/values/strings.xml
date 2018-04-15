@@ -31,6 +31,11 @@
     <string name="coin_graph">코인 그래프</string>
     <string name="cost_type">원</string>
     <string name="EA_String">EA</string>
-    <string name="total_cost_text">계산한\n총액</string>
+    <string name="total_buy_cost_text">구매한\n총액</string>
     <string name="submit_text">등록하기</string>
+    <string name="sell_wallet_title">판매한 코인 등록</string>
+    <string name="sell_mount_text">판매한 수량</string>
+    <string name="sell_coin_cost_text">판매한 가격</string>
+    <string name="over_sell_coin">갖고 있는 코인의 수량을 초과하셨습니다.</string>
+    <string name="down_sell_coin">코인을 0개 밑으로 팔 수 없습니다.</string>
 </resources>

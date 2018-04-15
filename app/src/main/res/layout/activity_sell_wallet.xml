@@ -28,7 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/buy_mount"
+            android:text="@string/sell_mount_text"
             android:layout_marginTop="8dp"
             android:gravity="center"></TextView>
         <FrameLayout
@@ -80,7 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/buy_value"
+            android:text="@string/sell_coin_cost_text"
             android:layout_marginTop="8dp"
             android:gravity="center"></TextView>
         <FrameLayout
@@ -124,13 +124,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/primary_item_color1">
+        android:background="@color/red_color_1">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/total_buy_cost_text"
+            android:text="판매한\n총액"
             android:textStyle="bold"
             android:textColor="@color/white_color"/>
         <TextView
@@ -169,7 +169,7 @@
                 android:text="@string/submit_text"
                 android:textColor="@color/white_color"
                 android:textSize="18dp"
-                android:backgroundTint="@color/primary_item_color3"
+                android:backgroundTint="@color/red_color_2"
                 android:id="@+id/registrationBtn"
                 tools:targetApi="lollipop" />
         </LinearLayout>

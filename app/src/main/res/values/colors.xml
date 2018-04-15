@@ -4,9 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="primary_item_color1">#9DC8C8</color>
-    <color name="primary_item_color2">#58C9B9</color>
-    <color name="primary_item_color3">#519D9E</color>
+    <color name="primary_item_color2">#7DC8C8</color>
+    <color name="primary_item_color3">#58C9B9</color>
+    <color name="primary_item_color4">#519D9E</color>
     <color name="black_overlay">#66000000</color>
     <color name="white_color">#FDFDF0</color>
     <color name="blue_color">#405F9F</color>
+    <color name="red_color_1">#FF7773</color>
+    <color name="red_color_2">#F05E36</color>
+    <color name="red_color_3">#E81E25</color>
 </resources>
